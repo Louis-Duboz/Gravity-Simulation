@@ -1,4 +1,6 @@
-﻿add_executable(Client WIN32 source/main.cpp)
+﻿add_executable(Client WIN32 "source/main.cpp" "source/pch.cpp")
+
+target_precompile_headers(Client PRIVATE "include/pch.h")
 
 if(WIN32)
   set_target_properties(Client PROPERTIES
