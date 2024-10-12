@@ -1,6 +1,7 @@
-add_library(PhysicsEngine STATIC source/main.cpp)
+add_library(PhysicsEngine STATIC "source/pch.cpp" "source/Simulation.cpp" "source/Systems.cpp" "include/Components/Position.h" "include/Components/Velocity.h" "include/Components/Acceleration.h" "include/Components.hpp")
 
 target_include_directories(PhysicsEngine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_precompile_headers(PhysicsEngine PRIVATE "include/pch.h")
 
 cmake_policy(SET CMP0079 NEW)
 target_link_libraries(PhysicsEngine PRIVATE flecs::flecs_static)

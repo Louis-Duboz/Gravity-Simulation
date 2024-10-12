@@ -1,0 +1,4 @@
+struct Mass
+{
+	double value;
+};
